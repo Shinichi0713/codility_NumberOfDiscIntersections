@@ -42,4 +42,21 @@ trips[i].length == 3
 0 <= fromi < toi <= 1000
 1 <= capacity <= 105
 ```
+解凍
+```
+def check_car_pooling(trips, capacity):
+    trace = [0] * 1001
+    # 各地点の乗客をトレース
+    for n, pick_in, pick_out in trips:
+        trace[pick_in] += n
+        trace[pick_out] -= n
+    # 乗客が定員を超えるか確認
+    for n in trace:
+        capacity -= n
+        if capacity < 0:
+            return False
+    return True
+
+print(check_car_pooling([[2,1,5],[3,3,7]], 4)) # False
+```
 
