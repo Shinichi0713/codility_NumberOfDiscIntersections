@@ -42,7 +42,7 @@ trips[i].length == 3
 0 <= fromi < toi <= 1000
 1 <= capacity <= 105
 ```
-解凍
+解答
 ```
 def check_car_pooling(trips, capacity):
     trace = [0] * 1001
